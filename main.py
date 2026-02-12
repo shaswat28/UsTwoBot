@@ -211,5 +211,17 @@ async def menu(interaction: discord.Interaction):
     
     await interaction.response.send_message(embed=embed)
 
+# --- NEW WEB COMMANDS ---
+
+@client.tree.command(name="view_dates", description="Get a link to see all date ideas in a table")
+async def view_dates(interaction: discord.Interaction):
+    url = "https://ustwobot.onrender.com/dates"
+    await interaction.response.send_message(f"📋 **Here is your full list of date ideas:**\n{url}", ephemeral=True)
+
+@client.tree.command(name="view_memories", description="Get a link to browse your scrapbook")
+async def view_memories(interaction: discord.Interaction):
+    url = "https://ustwobot.onrender.com/memories"
+    await interaction.response.send_message(f"📸 **Here is your digital scrapbook:**\n{url}", ephemeral=True)
+
 keep_alive()
 client.run(TOKEN)
