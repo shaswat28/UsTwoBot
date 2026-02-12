@@ -5,7 +5,7 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 from datetime import datetime
-from keep_alive import keep_alive
+from keepalive import keep_alive
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -211,4 +211,5 @@ async def menu(interaction: discord.Interaction):
     
     await interaction.response.send_message(embed=embed)
 
+keep_alive()
 client.run(TOKEN)
