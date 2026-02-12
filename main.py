@@ -5,7 +5,7 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 from datetime import datetime
-import random
+from keep_alive import keep_alive
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
